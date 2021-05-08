@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+<style>
+    body{
+    padding: 0;
+    margin: 0;
+    background-color: #5735d2;
+}
+
+.html, div, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, .row, .col, div, a, .container-fluid{
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    
+}
+
+.half{
+    height: 100vh;
+    width: 45%;
+    float: left;
+}
+
+.row{
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 30px;
+}
+
+.logo-container{
+    margin: auto;
+    width: 25%;
+    height: 120px;
+    padding-top: 200px;
+
+}
+
+.logo{
+    width: 100%;
+    height: 81px;
+    background-image: url(../assets/chatterbox-05.png);
+    background-size: cover;
+    background-position:center;  
+}
+
+h1{
+    color: white;
+    margin: auto;
+    text-align: center;
+}
+
+h3{
+    color: white;
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+}
+
+ul{
+    color: #fc963a;
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+}
+
+
+
+</style>
+</head>
+<body>
+
+        <div class="logo-container">
+            <div class="logo"></div>
+        </div>
+        <div class="row">
+            <h1>Welcome back to chaterbox ${email}!</h1>
+            <h3>You can contact:</h3>
+            <ul>${userList}</ul>
+        </div>
+
+</body>
+</html>

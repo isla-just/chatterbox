@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+<style>
+    body{
+    padding: 0;
+    margin: 0;
+}
+
+.html, div, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, .row, .col, div, a, .container-fluid{
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    
+}
+
+.half{
+    height: 100vh;
+    width: 45%;
+    float: left;
+    background-color: #5735d2;
+}
+
+.image{
+    height: 100vh;
+    width: 55%;
+    float: left;
+    background-image: url(../assets/half-illustration.jpg);
+    background-size: cover;
+    background-position:center;  
+}
+
+.logo-container{
+    margin: auto;
+    width: 40%;
+    height: 120px;
+    padding-top: 140px;
+}
+
+.logo{
+    width: 100%;
+    height: 57.5px;
+    background-image: url(../assets/chatterbox-05.png);
+    background-size: cover;
+    background-position:center;  
+}
+
+.half h3{
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.row{
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 30px;
+}
+
+.half input{
+    width: 96%;
+    border: none;
+    padding: 7px;
+}
+
+::placeholder{
+    color: #5735d2;
+}
+
+.half p{
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+#button{
+ width: 30%;
+ height: auto;
+ background-color: #fc963a;
+ padding: 10px;
+ color: white;
+ border-radius: 50px;
+ margin-left: 36%;
+}
+</style>
+
+</head>
+
+    <body>
+     <div class="half">
+         <div class="logo-container">
+             <div class="logo"></div>
+        </div>
+
+            <form method='POST'>
+            <h3>- LOGIN -</h3>
+
+            <div class="row">
+                <input type='text' name='email' placeholder="Email"/>
+            </div>
+             
+
+            <div class="row">
+                <input type='text' name='password' placeholder="Password"/>
+            </div>
+
+            <div class="row">
+                <p>Oops! I've forgotten my password</p>
+            </div>
+             
+            <div class="row">
+                <input id="button" type='submit' value='submit'/>
+            </div>
+             
+
+     </div><!--half-->
+     <div class="image"></div>
+    </body>
+</html>
