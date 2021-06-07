@@ -98,6 +98,7 @@ overflow: scroll;
     height: 50px;
     border-radius: 50%;
     float: left;
+    margin-left: 5px;
 }
 
 #contactName{
@@ -163,12 +164,12 @@ overflow: scroll;
     width: 30%;
     height: auto;
     padding: 15px;
-    background-color: #fc963a;
+    background-color: white;
     border-radius: 30px;
     margin-top: 20px;
     margin-left: 10px;
 
-    color: white;
+    color: #5735D2;
 }
 
 .send{
@@ -188,10 +189,11 @@ overflow: scroll;
 }
 
 .entered{
-    color: white;
+    color: #C5EAFD;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
+    font-weight: 200;
 }
 
 </style>
@@ -232,6 +234,7 @@ overflow: scroll;
 <script>
     //get the logged in username
     const username=`${username}`;
+    var hexColour=['EC2468','8168DD','EC8E18','7CDDFC','F05086','6E64CC','F0A546','92DEFC','F47CA4'];
 
         const socket=io("http://localhost:8888/", {reconnect:true, transports:['websocket']});
 
@@ -261,7 +264,7 @@ overflow: scroll;
             console.log(history[0]);
 
             for(var i=0;i<history.length;i++){
-                  $(".chat-container").append(" <div class='message'><strong>"+history[i].author+": </strong>"+history[i].message+"</div>");
+                  $(".chat-container").append(" <div class='message'><strong style='color:#"+hexColour[i]+"'>"+history[i].author+": </strong>"+history[i].message+"</div>");
             }
 
                   
@@ -278,12 +281,20 @@ overflow: scroll;
 
             //send the message in the correct format to the server
             socket.emit("message:sent",newMessage)
+
+            //clearing input field
+            document.getElementById("chatbar").value='';
         }
 
         //listen to our server for any new messages coming in
         socket.on("new:message",(newMessage)=>{
-            $("#message").append('<p><strong>'+newMessage.author+"</strong> : "+newMessage.message+'</p>');
+            console.log(newMessage);
+
+            var counter=Math.floor(Math.random() * 9) + 1;
+
+                 $(".chat-container").append(" <div class='message'><strong style='color:#"+hexColour[counter]+"'>"+newMessage.author+": </strong>"+newMessage.message+"</div>");
         });
+
 </script>
 </body>
 </html>
