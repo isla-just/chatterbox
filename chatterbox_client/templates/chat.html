@@ -245,7 +245,8 @@ overflow: scroll;
         socket.on("user:list",(users)=>{
                 console.log(users);
                 
-                $(".contactName").text('');
+                $(".contacts").text('');
+                $(".entered").text('');
 
             for(var i=0;i<users.length;i++){
 

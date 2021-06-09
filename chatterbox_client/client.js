@@ -18,7 +18,7 @@ var socket=io("http://localhost:8888/", {reconnect:true, transports:['websocket'
 var handleFormGet = function(request, response){
 
     response.writeHead(200, {"Content-Type": "text/html"});
-    
+
     //fs
     fs.readFile("templates/index.html", "utf8", function(err, data) {
         if(err) {throw err;}
@@ -53,7 +53,13 @@ var handleFormPost = function(request, response){
 
         var post = querystring.parse(payload);
 
-        socket.emit("login:request",post); 
+// array of object called authUsers = [ 
+// {username: "Isla", password: 12345}
+// ]
+// async await Promise setTimeout
+
+
+                   socket.emit("login:request",post); 
 
         fs.readFile("templates/chat.html", "utf8", function(err, data) {
             if(err) {throw err;}
@@ -63,8 +69,8 @@ var handleFormPost = function(request, response){
 
             response.end(compiled);
             
-        });
-
+        });//readfile 
+  
     });
 
 }
